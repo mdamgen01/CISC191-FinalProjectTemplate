@@ -34,13 +34,13 @@ public class VegetableGUI {
     /**
      * An object of dataType ViewPlantManagement that represents the main user interface for managing the plants
      */
-    private ViewPlantManagement viewPlantManagementUI;
+    private Client viewPlantManagementUI;
 
     /**
      * Constructor for the VegetableUI Class
      * @param viewPlantManagementUI main user interface for managing the plants
      */
-    public VegetableGUI(ViewPlantManagement viewPlantManagementUI) {
+    public VegetableGUI(Client viewPlantManagementUI) {
         this.viewPlantManagementUI = viewPlantManagementUI;
         GridPane addVegetableGrid = new GridPane();
         addVegetableGrid.setPadding(new Insets(10));
@@ -74,7 +74,7 @@ public class VegetableGUI {
         addVegetableGrid.add(addButton, 1, 3);
 
         Stage stage = new Stage();
-        stage.setTitle("Add Product");
+        stage.setTitle("Add Plant");
         stage.setScene(new Scene(addVegetableGrid));
         stage.show();
     }
@@ -90,7 +90,7 @@ public class VegetableGUI {
     }
 
     /**
-     * Adds Vegetable to the array plant
+     * Adds Vegetable to the ArrayList of plants
      * @throws NumberFormatException if the quantity input is not numeric
      */
     private void addVegetable() throws NumberFormatException{
@@ -102,18 +102,22 @@ public class VegetableGUI {
             displayMessage(AlertType.ERROR, "Please make sure all fields are filled");
         } else {
             try {
-                int availableQuantity = Integer.parseInt(String.valueOf(quantityString));
+                int availableQuantity = Integer.parseInt(quantityString);
+
                 if (availableQuantity <= 0) {
                     displayMessage(AlertType.ERROR, "Quantity must be greater than 0!");
                 }
-                viewPlantManagementUI.getManager().addPlant(new Vegetable(name, availableQuantity, variety));
+
+                VegetableRequest newVegetableRequest = new VegetableRequest(name, availableQuantity, variety);
+                viewPlantManagementUI.getManager().addPlant(newVegetableRequest);
                 viewPlantManagementUI.listAllPlants();
+
                 clearTextFields();
+
             } catch (NumberFormatException e) {
                 displayMessage(AlertType.ERROR, "Quantity should be numeric value!");
-                throw e;
+                System.out.println(e);
             }
-
         }
     }
 

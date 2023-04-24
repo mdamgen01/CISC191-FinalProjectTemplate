@@ -1,11 +1,11 @@
 package edu.sdccd.cisc191.template;
 
 /**
- * The RootVegetable class extends the Vegetable class and Implements the VegetableFacts class
+ * The RootVegetable class extends the VegetableRequest class and Implements the VegetableFacts class
  * It is used to construct a RootVegetable object
  * It implements the VegetableFacts class that provides information about the leafy vegetable
  */
-public class RootVegetable extends Vegetable implements VegetableFacts{
+public class RootVegetable extends VegetableRequest implements VegetableFacts{
     /**
      * The container depth of the pot required for the plant
      */

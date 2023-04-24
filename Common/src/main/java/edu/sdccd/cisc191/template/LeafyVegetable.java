@@ -1,11 +1,12 @@
 package edu.sdccd.cisc191.template;
 
 /**
- * The LeafyVegetable class extends the Vegetable class and Implements the VegetableFacts class
+ * The LeafyVegetable class extends the VegetableRequest class and Implements the VegetableFacts class
  * It is used to construct a leafyVegetable object
  * It implements the VegetableFacts class that provides information about the leafy vegetable
  */
-public class LeafyVegetable extends Vegetable implements VegetableFacts{
+public class LeafyVegetable extends VegetableRequest implements VegetableFacts{
+
     /**
      * Construct the LeafyVegetable Object
      * @param name the name of the leafy vegetable
@@ -24,5 +25,4 @@ public class LeafyVegetable extends Vegetable implements VegetableFacts{
     public String VegetableFacts() {
         return "Leafy Vegetables are easy to grow!";
     }
-
 }

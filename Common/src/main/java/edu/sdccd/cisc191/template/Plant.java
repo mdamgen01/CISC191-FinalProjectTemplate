@@ -1,14 +1,19 @@
 package edu.sdccd.cisc191.template;
 
+import java.io.Serializable;
+
 /**
- * Plant Class is an abstract class representing a generic plant
+ * Plant Class is a class representing a generic plant
+ * It also implements Serializable so it's subclasses can be serialized and deserialized
  * It is used as a based class to create more specific type of plants
  */
-public abstract class Plant {
+public class Plant implements Serializable {
+
     /**
      * Plant name
      */
     private String name;
+
     /**
      * Plant quantity
      */
@@ -55,5 +60,4 @@ public abstract class Plant {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
 }
