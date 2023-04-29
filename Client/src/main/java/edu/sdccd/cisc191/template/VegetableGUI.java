@@ -19,22 +19,22 @@ public class VegetableGUI {
     /**
      * TextField input for the name of the vegetable
      */
-    private TextField nameTextField;
+    private final TextField nameTextField;
 
     /**
      * TextField input for the quantity of the vegetable
      */
-    private TextField quantityTextField;
+    private final TextField quantityTextField;
 
     /**
      * TextField input for the variety of the vegetable
      */
-    private TextField varietyTextField;
+    private final TextField varietyTextField;
 
     /**
      * An object of dataType ViewPlantManagement that represents the main user interface for managing the plants
      */
-    private Client viewPlantManagementUI;
+    private final Client viewPlantManagementUI;
 
     /**
      * Constructor for the VegetableUI Class
@@ -58,9 +58,7 @@ public class VegetableGUI {
 
         Button addButton = new Button("Add");
         addButton.setPrefWidth(150);
-        addButton.setOnAction(e -> {
-            addVegetable();
-        });
+        addButton.setOnAction(e -> addVegetable());
 
         addVegetableGrid.add(new Label("Name: "), 0, 0);
         addVegetableGrid.add(nameTextField, 1, 0);

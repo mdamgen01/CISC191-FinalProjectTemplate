@@ -9,5 +9,5 @@ public interface VegetableFacts {
      * Returns information about a vegetable
      * @return information about a vegetable
      */
-    public String VegetableFacts();
+    String VegetableFacts();
 }

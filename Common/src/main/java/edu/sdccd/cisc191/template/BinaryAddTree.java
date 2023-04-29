@@ -3,7 +3,7 @@ package edu.sdccd.cisc191.template;
 /**
  * The BinaryAddTree class is a binary tree that stores the ideas for plants.
  * It has the methods to add a new plant into the tree.
- * It also return the plant idea in order
+ * It also returns the plant idea in order
  */
 public class BinaryAddTree {
 
