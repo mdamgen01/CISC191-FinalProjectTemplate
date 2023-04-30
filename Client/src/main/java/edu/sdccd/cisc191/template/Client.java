@@ -32,7 +32,7 @@ public class Client extends Application {
     /**
      * PlantManagement object
      */
-    private PlantManagement manager;
+    private final PlantManagement manager;
 
     /**
      * Constructor for the Client Class
@@ -78,14 +78,10 @@ public class Client extends Application {
         plantsTable.getColumns().addAll( nameColumn, quantityColumn, varietyColumn);
 
         Button addButton = new Button("Add Plant");
-        addButton.setOnAction(e -> {
-            new VegetableGUI(this);
-        });
+        addButton.setOnAction(e -> new VegetableGUI(this));
 
         Button deleteButton = new Button("Delete Plant");
-        deleteButton.setOnAction(e -> {
-            deletePlant();
-        });
+        deleteButton.setOnAction(e -> deletePlant());
 
         Button exportButton  = new Button ("Export Table");
         exportButton.setOnAction(e -> {
@@ -171,7 +167,7 @@ public class Client extends Application {
      * The main method creates a socket and connects to the server.
      * It sends a serialized VegetableRequest Object to the server
      * and receives a serialized VegetableResponse object from the server.
-     * Then it will deserialized the received VegetableResponse object and
+     * Then it will deserialize the received VegetableResponse object and
      * print it into the console.
      * @param args the command line argument
      */
